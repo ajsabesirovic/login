@@ -33,7 +33,7 @@ const passwordReducer = (state, action) => {
 
 const Login = () => {
   const ctx = useContext(AuthContext);
-  
+
   const [formIsValid, setFormIsValid] = useState(false);
   const [emailState, dispatchEmail] = useReducer(emailReducer, {
     value: "",
@@ -76,9 +76,9 @@ const Login = () => {
     if (formIsValid) {
       ctx.onLogin(emailState.value, passwordState.value);
     } else if (!emailIsValid) {
-      emailRef.current.focus();
+      emailRef.current.activate();
     } else {
-      passwordRef.current.focus();
+      passwordRef.current.activate();
     }
   };
 
